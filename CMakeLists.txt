@@ -35,7 +35,8 @@ ELSE(WIN32)
                       ${TINYXML_INCLUDE_DIR}
                       ${XBMC_INCLUDE_DIR}
                       ${PROJECT_SOURCE_DIR}/src)
-  ADD_DEFINITIONS(-DTARGET_LINUX)
+  ADD_DEFINITIONS(-DTARGET_LINUX  -D__STDC_FORMAT_MACROS)
+  SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -fPIC)
 ENDIF(WIN32)
 
 SET(SOURCES src/Cards.cpp
@@ -55,8 +56,8 @@ ADD_SUBDIRECTORY(src/lib/tsreader)
 ADD_LIBRARY(pvr.mediaportal.tvserver ${SOURCES})
 ADD_DEPENDENCIES(pvr.mediaportal.tvserver tsreader)
 IF(NOT WIN32)
-  TARGET_LINK_LIBRARIES(pvr.argustv ${xbmcplatform_LIBRARIES}
-                                    ${TINYXML_LIBRARIES} tsreader)
+  TARGET_LINK_LIBRARIES(pvr.mediaportal.tvserver ${xbmcplatform_LIBRARIES}
+                                                 ${TINYXML_LIBRARIES} tsreader)
   set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "-s")
   set(CMAKE_MODULE_LINKER_FLAGS_RELEASE "-s")
 ENDIF(NOT WIN32)
