@@ -36,7 +36,8 @@ ELSE(WIN32)
                       ${XBMC_INCLUDE_DIR}
                       ${PROJECT_SOURCE_DIR}/src)
   ADD_DEFINITIONS(-DTARGET_LINUX  -D__STDC_FORMAT_MACROS)
-  SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -fPIC)
+  include(AddOptions.cmake)
+  add_options(ALL_LANGUAGES RELEASE "-fPIC")
 ENDIF(WIN32)
 
 SET(SOURCES src/Cards.cpp
