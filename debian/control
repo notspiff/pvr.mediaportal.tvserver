@@ -5,7 +5,7 @@ Build-Depends: debhelper (>= 8.0.0), cmake, libtinyxml-dev, xbmc-pvr-dev,
                libxbmcplatform-dev, xbmc-addon-dev
 Standards-Version: 3.9.2
 Section: libs
-Homepage: <insert the upstream URL, if relevant>
+Homepage: http://www.scintilla.utwente.nl/~marcelg/xbmc/
 
 Package: xbmc-pvr-mediaportal-tvserver
 Section: libs
@@ -13,3 +13,11 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: MediaPortal PVR for XBMC
  MediaPortal PVR for XBMC
+
+Package: xbmc-pvr-mediaportal-tvserver-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: debug symbols for MediaPortal PVR for XBMC
+ debug symbols for the MediaPortal PVR XBMC Addon
+
