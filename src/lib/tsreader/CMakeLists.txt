@@ -4,8 +4,19 @@ ENABLE_LANGUAGE(CXX)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
-SET(SOURCES FileReader.cpp
+SET(SOURCES ChannelInfo.cpp
+            DeMultiplexer.cpp
+            DvbUtil.cpp
+            FileReader.cpp
+            MemoryReader.cpp
             MultiFileReader.cpp
+            PacketSync.cpp
+            PatParser.cpp
+            PidTable.cpp
+            PmtParser.cpp
+            Section.cpp
+            SectionDecoder.cpp
+            TSHeader.cpp
             TSReader.cpp)
 
 ADD_LIBRARY(tsreader STATIC ${SOURCES})
