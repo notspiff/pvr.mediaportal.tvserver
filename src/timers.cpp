@@ -23,7 +23,7 @@
 
 using namespace std;
 
-#include "xbmc/os.h" //needed for snprintf
+#include "kodi/os.h" //needed for snprintf
 #include "client.h"
 #include "timers.h"
 #include "utils.h"

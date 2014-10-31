@@ -35,10 +35,10 @@
 #include "FileReader.h"
 #include "client.h" //for XBMC->Log
 #include "TSDebug.h"
-#include "xbmc/threads/threads.h"
+#include "kodi/threads/threads.h"
 #include <algorithm> //std::min, std::max
-#include "xbmc/util/timeutils.h" // for usleep
-#include "xbmc/util/util.h"
+#include "kodi/util/timeutils.h" // for usleep
+#include "kodi/util/util.h"
 #include "utils.h"
 #include <errno.h>
 

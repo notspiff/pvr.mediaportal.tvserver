@@ -38,9 +38,9 @@
 #include <string>
 #include "utils.h"
 #include <algorithm>
-#include "xbmc/util/timeutils.h"
-#include "xbmc/util/StdString.h"
-#include "xbmc/threads/threads.h"
+#include "kodi/util/timeutils.h"
+#include "kodi/util/StdString.h"
+#include "kodi/threads/threads.h"
 #include <inttypes.h>
 
 using namespace ADDON;

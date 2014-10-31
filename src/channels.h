@@ -20,7 +20,7 @@
  *
  */
 
-#include "xbmc/libXBMC_pvr.h"
+#include "kodi/libXBMC_pvr.h"
 #include <string>
 
 class cChannel

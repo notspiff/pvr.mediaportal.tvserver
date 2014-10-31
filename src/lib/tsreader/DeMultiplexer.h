@@ -37,7 +37,7 @@
 #include "PacketSync.h"
 #include "TSHeader.h"
 #include "PatParser.h"
-#include "xbmc/threads/mutex.h"
+#include "kodi/threads/mutex.h"
 
 using namespace std;
 class CTsReader;

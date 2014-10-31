@@ -21,7 +21,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "xbmc/util/timeutils.h"
+#include "kodi/util/timeutils.h"
 
 #include "client.h"
 #include "timers.h"
