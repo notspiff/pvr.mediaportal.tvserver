@@ -47,4 +47,8 @@ set(DEPLIBS ${KODIPLATFORM_LIBRARIES}
 
 build_addon(pvr.mediaportal.tvserver MPTV DEPLIBS)
 
+if(WIN32)
+  target_link_libraries(pvr.mediaportal.tvserver ws2_32)
+endif()
+
 include(CPack)
