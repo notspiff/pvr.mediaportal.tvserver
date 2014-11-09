@@ -24,8 +24,10 @@ endif()
 set(MPTV_SOURCES src/Cards.cpp
                  src/channels.cpp
                  src/client.cpp
+                 src/DateTime.cpp
                  src/epg.cpp
                  src/GenreTable.cpp
+                 src/GUIDialogRecordSettings.cpp
                  src/pvrclient-mediaportal.cpp
                  src/recordings.cpp
                  src/Socket.cpp
