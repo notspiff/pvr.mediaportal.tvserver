@@ -14,7 +14,9 @@ include_directories(${KODIPLATFORM_INCLUDE_DIRS}
                     ${TINYXML_INCLUDE_DIR}
                     ${KODI_INCLUDE_DIR}
                     ${PROJECT_SOURCE_DIR}/src)
+
 add_definitions(-D__STDC_FORMAT_MACROS)
+
 if (NOT WIN32)
   add_options(ALL_LANGUAGES ALL_BUILDS "-fPIC")
 endif()
