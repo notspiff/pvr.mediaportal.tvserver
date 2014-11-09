@@ -14,7 +14,9 @@ include_directories(${KODIPLATFORM_INCLUDE_DIRS}
                     ${TINYXML_INCLUDE_DIR}
                     ${KODI_INCLUDE_DIR}
                     ${PROJECT_SOURCE_DIR}/src)
+
 add_definitions(-D__STDC_FORMAT_MACROS)
+
 if (NOT WIN32)
   add_options(ALL_LANGUAGES ALL_BUILDS "-fPIC")
 endif()
@@ -22,8 +24,10 @@ endif()
 set(MPTV_SOURCES src/Cards.cpp
                  src/channels.cpp
                  src/client.cpp
+                 src/DateTime.cpp
                  src/epg.cpp
                  src/GenreTable.cpp
+                 src/GUIDialogRecordSettings.cpp
                  src/pvrclient-mediaportal.cpp
                  src/recordings.cpp
                  src/Socket.cpp
@@ -31,11 +35,20 @@ set(MPTV_SOURCES src/Cards.cpp
                  src/uri.cpp
                  src/utils.cpp)
 
+if(WIN32)
+  list(APPEND MPTV_SOURCES src/windows/FileUtils.cpp
+                           src/windows/WindowsUtils.cpp)
+endif()
+
 add_subdirectory(src/lib/tsreader)
 
 set(DEPLIBS ${KODIPLATFORM_LIBRARIES}
             ${TINYXML_LIBRARIES} tsreader)
 
 build_addon(pvr.mediaportal.tvserver MPTV DEPLIBS)
+
+if(WIN32)
+  target_link_libraries(pvr.mediaportal.tvserver ws2_32)
+endif()
 
 include(CPack)
