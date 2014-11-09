@@ -10,7 +10,7 @@ find_package(kodi REQUIRED)
 find_package(kodiplatform REQUIRED)
 find_package(TinyXML REQUIRED)
 
-include_directories(${KODIPLATFORM_INCLUDE_DIRS}
+include_directories(${kodiplatform_INCLUDE_DIRS}
                     ${TINYXML_INCLUDE_DIR}
                     ${KODI_INCLUDE_DIR}
                     ${PROJECT_SOURCE_DIR}/src)
@@ -42,13 +42,13 @@ endif()
 
 add_subdirectory(src/lib/tsreader)
 
-set(DEPLIBS ${KODIPLATFORM_LIBRARIES}
+set(DEPLIBS ${kodiplatform_LIBRARIES}
             ${TINYXML_LIBRARIES} tsreader)
 
-build_addon(pvr.mediaportal.tvserver MPTV DEPLIBS)
-
 if(WIN32)
-  target_link_libraries(pvr.mediaportal.tvserver ws2_32)
+  list(APPEND DEPLIBS ws2_32)
 endif()
+
+build_addon(pvr.mediaportal.tvserver MPTV DEPLIBS)
 
 include(CPack)
