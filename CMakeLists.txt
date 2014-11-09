@@ -35,6 +35,11 @@ set(MPTV_SOURCES src/Cards.cpp
                  src/uri.cpp
                  src/utils.cpp)
 
+if(WIN32)
+  list(APPEND MPTV_SOURCES src/windows/FileUtils.cpp
+                           src/windows/WindowsUtils.cpp)
+endif()
+
 add_subdirectory(src/lib/tsreader)
 
 set(DEPLIBS ${KODIPLATFORM_LIBRARIES}
