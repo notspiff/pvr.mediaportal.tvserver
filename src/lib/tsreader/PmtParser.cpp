@@ -87,7 +87,7 @@ void CPmtParser::OnNewSection(CSection& section)
     int stream_type = 0;
     short elementary_PID = 0;
     short ES_info_length = 0;
-    vector<TempPid> tempPids;
+    std::vector<TempPid> tempPids;
 
     m_pidInfo.Reset();
     m_pidInfo.PmtPid = GetPid();
